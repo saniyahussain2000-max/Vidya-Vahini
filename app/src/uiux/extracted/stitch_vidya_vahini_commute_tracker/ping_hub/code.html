@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vidya-Vahini - Ping Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#006d2b",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#adc7ff",
+                        "primary-fixed-dim": "#adc7ff",
+                        "secondary-container": "#febf0d",
+                        "surface-tint": "#005bc0",
+                        "surface": "#faf9fd",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#414754",
+                        "outline": "#727785",
+                        "on-primary-fixed": "#001a41",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#ffffff",
+                        "background": "#faf9fd",
+                        "on-tertiary-fixed-variant": "#00531f",
+                        "on-primary-fixed-variant": "#004493",
+                        "primary-container": "#1a73e8",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#fbbc05",
+                        "inverse-surface": "#2f3033",
+                        "on-tertiary-container": "#000601",
+                        "error": "#ba1a1a",
+                        "on-background": "#1a1b1e",
+                        "on-secondary-container": "#6d5000",
+                        "surface-bright": "#faf9fd",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-container-high": "#e9e7eb",
+                        "outline-variant": "#c1c6d6",
+                        "primary": "#005bbf",
+                        "on-secondary-fixed": "#261a00",
+                        "tertiary-fixed-dim": "#7adb87",
+                        "surface-variant": "#e3e2e6",
+                        "tertiary-container": "#24883f",
+                        "on-error-container": "#93000a",
+                        "secondary": "#795900",
+                        "surface-container-low": "#f4f3f7",
+                        "on-surface": "#1a1b1e",
+                        "inverse-on-surface": "#f1f0f4",
+                        "surface-dim": "#dbd9dd",
+                        "on-tertiary-fixed": "#002108",
+                        "surface-container": "#efedf1",
+                        "secondary-fixed": "#ffdfa0",
+                        "tertiary-fixed": "#96f8a1",
+                        "surface-container-highest": "#e3e2e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-main": "20px",
+                        "base": "8px",
+                        "gutter": "12px",
+                        "touch-target-min": "48px",
+                        "touch-target-lg": "56px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Public Sans"],
+                        "label-lg": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "label-md": ["Public Sans"],
+                        "status-display": ["Public Sans"],
+                        "headline-lg": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.5px", "fontWeight": "700" }],
+                        "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.3px", "fontWeight": "600" }],
+                        "status-display": ["32px", { "lineHeight": "40px", "fontWeight": "800" }],
+                        "headline-lg": ["28px", { "lineHeight": "34px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 flex justify-between items-center w-full px-5 h-16 fixed top-0 left-0 z-[60] border-b border-gray-200 dark:border-gray-800 shadow-sm">
+<button class="text-blue-700 dark:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800 active:scale-95 transition-transform duration-200 h-12 w-12 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-xl font-black text-blue-700 dark:text-blue-400 font-public-sans font-bold tracking-tight">
+            Vidya-Vahini
+        </h1>
+<div class="h-10 w-10 rounded-full overflow-hidden bg-surface-variant flex-shrink-0 border border-outline-variant">
+<img alt="Student Profile Photo" class="h-full w-full object-cover" data-alt="A professional headshot of a friendly female school transport coordinator wearing a crisp blue uniform. The background is softly blurred indicating an outdoor daytime setting with high-key natural lighting. The overall mood is dependable and assuring, fitting a modern utilitarian design aesthetic with bright whites and deep blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsJLZNcCwiMxgVs81L7V7fq_VWPzmd6_jkarp_zxxEDAybFqqvIWZqKLFik4wK40yrHYABgZ-93myhnebtQfTvwNLFW7dCKUydUZ2qHEXn29sWUbkFr0qc1nUTuFwVDAw42itbxbGe8MS3t0JOEg1iAEDCz20m5J5FIAjW7ZMiRKGOdv0JYaZ2Svp0h4p8I_wy69d9Px8pBDJNbNb4T3ukhlz6oQWaT4yzXfBuoUWaarW10O-wtz8c3bJarxLHIrA0GeXN4euDtAM"/>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-margin-main pt-[80px] pb-[100px] max-w-2xl mx-auto w-full">
+<!-- Header -->
+<div class="mb-6 mt-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-1">Ping Hub</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Tap to broadcast your location instantly.</p>
+</div>
+<!-- Quick Pings Bento Grid -->
+<div class="grid grid-cols-2 gap-gutter mb-10">
+<!-- Ping: Bridge -->
+<button class="bg-surface border border-outline rounded-xl p-4 flex flex-col justify-between min-h-[140px] hover:border-primary hover:bg-surface-container-low active:bg-primary-container active:border-primary group transition-all text-left shadow-sm">
+<div class="h-12 w-12 rounded-full bg-primary-fixed flex items-center justify-center mb-4 group-active:bg-on-primary">
+<span class="material-symbols-outlined text-primary-fixed-variant text-2xl group-active:text-primary">link</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface group-active:text-on-primary-container">Just Crossed Bridge</span>
+</button>
+<!-- Ping: Market -->
+<button class="bg-surface border border-outline rounded-xl p-4 flex flex-col justify-between min-h-[140px] hover:border-primary hover:bg-surface-container-low active:bg-primary-container active:border-primary group transition-all text-left shadow-sm">
+<div class="h-12 w-12 rounded-full bg-primary-fixed flex items-center justify-center mb-4 group-active:bg-on-primary">
+<span class="material-symbols-outlined text-primary-fixed-variant text-2xl group-active:text-primary">storefront</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface group-active:text-on-primary-container">At Market Square</span>
+</button>
+<!-- Ping: Main Gate -->
+<button class="bg-surface border border-outline rounded-xl p-4 flex flex-col justify-between min-h-[140px] hover:border-primary hover:bg-surface-container-low active:bg-primary-container active:border-primary group transition-all text-left shadow-sm col-span-2 sm:col-span-1">
+<div class="h-12 w-12 rounded-full bg-primary-fixed flex items-center justify-center mb-4 group-active:bg-on-primary">
+<span class="material-symbols-outlined text-primary-fixed-variant text-2xl group-active:text-primary">door_open</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface group-active:text-on-primary-container">Reached Main Gate</span>
+</button>
+<!-- Ping: Traffic -->
+<button class="bg-surface border border-outline rounded-xl p-4 flex flex-col justify-between min-h-[140px] hover:border-primary hover:bg-surface-container-low active:bg-primary-container active:border-primary group transition-all text-left shadow-sm col-span-2 sm:col-span-1">
+<div class="h-12 w-12 rounded-full bg-surface-variant flex items-center justify-center mb-4 group-active:bg-on-primary">
+<span class="material-symbols-outlined text-on-surface-variant text-2xl group-active:text-primary">traffic</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface group-active:text-on-primary-container">Stuck in Traffic</span>
+</button>
+</div>
+<!-- Critical Action -->
+<div class="border-t border-surface-variant pt-8">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Emergency</h3>
+<button class="w-full h-touch-target-lg bg-secondary-container text-on-secondary-container rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-3 active:scale-[0.98] transition-transform shadow-md border border-[#e5a000]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+                Report Breakdown
+            </button>
+</div>
+<!-- Recent Activity Context -->
+<div class="mt-10">
+<h4 class="font-label-md text-label-md text-outline uppercase tracking-wider mb-4">Recent Activity</h4>
+<div class="bg-surface-container-low rounded-xl border border-surface-dim p-4 flex items-center gap-4">
+<div class="h-10 w-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Started Route 4A</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Today at 07:15 AM</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-2 pb-safe bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800 md:hidden">
+<!-- Route (Inactive) -->
+<button class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 px-3 py-1 hover:text-blue-600 dark:hover:text-blue-300 active:scale-90 transition-all duration-150 font-public-sans text-[12px] font-semibold w-16">
+<span class="material-symbols-outlined mb-1">directions_bus</span>
+<span>Route</span>
+</button>
+<!-- Ping Hub (Active) -->
+<button class="flex flex-col items-center justify-center bg-blue-50 dark:bg-blue-900/40 text-blue-800 dark:text-blue-200 rounded-xl px-3 py-1 hover:text-blue-600 dark:hover:text-blue-300 active:scale-90 transition-all duration-150 font-public-sans text-[12px] font-semibold w-20">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">sensors</span>
+<span>Ping Hub</span>
+</button>
+<!-- Alerts (Inactive) -->
+<button class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 px-3 py-1 hover:text-blue-600 dark:hover:text-blue-300 active:scale-90 transition-all duration-150 font-public-sans text-[12px] font-semibold w-16">
+<span class="material-symbols-outlined mb-1">notifications</span>
+<span>Alerts</span>
+</button>
+<!-- Settings (Inactive) -->
+<button class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 px-3 py-1 hover:text-blue-600 dark:hover:text-blue-300 active:scale-90 transition-all duration-150 font-public-sans text-[12px] font-semibold w-16">
+<span class="material-symbols-outlined mb-1">settings</span>
+<span>Settings</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vidya-Vahini - Safe-Reach &amp; Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#006d2b",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#adc7ff",
+                        "primary-fixed-dim": "#adc7ff",
+                        "secondary-container": "#febf0d",
+                        "surface-tint": "#005bc0",
+                        "surface": "#faf9fd",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#414754",
+                        "outline": "#727785",
+                        "on-primary-fixed": "#001a41",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#ffffff",
+                        "background": "#faf9fd",
+                        "on-tertiary-fixed-variant": "#00531f",
+                        "on-primary-fixed-variant": "#004493",
+                        "primary-container": "#1a73e8",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#fbbc05",
+                        "inverse-surface": "#2f3033",
+                        "on-tertiary-container": "#000601",
+                        "error": "#ba1a1a",
+                        "on-background": "#1a1b1e",
+                        "on-secondary-container": "#6d5000",
+                        "surface-bright": "#faf9fd",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-container-high": "#e9e7eb",
+                        "outline-variant": "#c1c6d6",
+                        "primary": "#005bbf",
+                        "on-secondary-fixed": "#261a00",
+                        "tertiary-fixed-dim": "#7adb87",
+                        "surface-variant": "#e3e2e6",
+                        "tertiary-container": "#24883f",
+                        "on-error-container": "#93000a",
+                        "secondary": "#795900",
+                        "surface-container-low": "#f4f3f7",
+                        "on-surface": "#1a1b1e",
+                        "inverse-on-surface": "#f1f0f4",
+                        "surface-dim": "#dbd9dd",
+                        "on-tertiary-fixed": "#002108",
+                        "surface-container": "#efedf1",
+                        "secondary-fixed": "#ffdfa0",
+                        "tertiary-fixed": "#96f8a1",
+                        "surface-container-highest": "#e3e2e6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-main": "20px",
+                        "base": "8px",
+                        "gutter": "12px",
+                        "touch-target-min": "48px",
+                        "touch-target-lg": "56px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Public Sans"],
+                        "label-lg": ["Public Sans"],
+                        "headline-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "label-md": ["Public Sans"],
+                        "status-display": ["Public Sans"],
+                        "headline-lg": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.5px", "fontWeight": "700" }],
+                        "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.3px", "fontWeight": "600" }],
+                        "status-display": ["32px", { "lineHeight": "40px", "fontWeight": "800" }],
+                        "headline-lg": ["28px", { "lineHeight": "34px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #faf9fd; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0 md:pl-72 flex flex-col">
+<!-- Mobile TopAppBar -->
+<header class="md:hidden flex justify-between items-center w-full px-5 h-16 bg-white dark:bg-slate-900 sticky full-width top-0 border-b border-gray-200 dark:border-gray-800 z-50">
+<button aria-label="Menu" class="text-blue-700 dark:text-blue-400 active:scale-95 transition-transform duration-200 hover:bg-gray-100 dark:hover:bg-gray-800 p-2 rounded-full flex items-center justify-center h-12 w-12">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<h1 class="font-public-sans font-bold tracking-tight text-xl font-black text-blue-700 dark:text-blue-400">Vidya-Vahini</h1>
+<div class="h-10 w-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant flex-shrink-0">
+<img alt="Student Profile Photo" class="w-full h-full object-cover" data-alt="A smiling female student profile picture in a well-lit environment, high quality, professional yet approachable, fitting the utilitarian app style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtSCEGOYodAE8PVaae6BPTKt9Wm-FJKRVea03IjpK37LqMKGuZTMJfh8UDhZKp3cMfbHZYrCv4Aglr6rEhiRJ-PgLLqg1-jGQYJWQq74dlb88DkuRPPaWvx59XdAAkgYo9mMaPt49r1Ad-OKQkZzlIhSSU5L_uBN8_U3meGoCGMcjtJrPSxdQQzM0MfFK86QMSglOoGq13bydPb13b4tIAofqX0UMW8CrJi0UhsoL1wButsoTH2f9epU1VLteU65FVYFbLvdfll48"/>
+</div>
+</header>
+<!-- Desktop NavigationDrawer -->
+<nav class="hidden md:flex fixed inset-y-0 left-0 z-[60] flex flex-col py-6 h-full w-72 border-r bg-white dark:bg-slate-950 border-gray-200 dark:border-gray-800">
+<div class="px-6 pb-6 border-b border-outline-variant mb-4">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-surface-variant overflow-hidden border border-outline-variant flex-shrink-0">
+<img alt="Student Avatar" class="w-full h-full object-cover" data-alt="A smiling female student profile picture in a well-lit environment, high quality, professional yet approachable, fitting the utilitarian app style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALVd3cDm9bl-n-0D9R4vKXP00W_aMI2EDU4kbzpzvCJ-2Rh3O-r-WnKgdpcgA6pO-_1kuOwne7EJ0h8vAkjbw0CZ9tJYr4bumbrI7HGvphrbgM5m13OU_aHRsEUDfk97g-vfDhbzzMs0L_f-lc51a-6-i5a4hPLrF398hLZH-k4AI6EB73WudenYPh-V8QOTp9WUr1CcnEjwKgx8alBVLfRS8W_Q4PvOBFZQrwkqLdn4Ojaqz4bI0a8FbVvIhrEYVIcIUfsXQzNEM"/>
+</div>
+<div>
+<h2 class="font-label-lg text-label-lg text-on-surface">Ananya Sharma</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">GDC Rural Campus • Route 4A</p>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto font-public-sans">
+<a class="flex items-center gap-3 px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">alt_route</span>
+<span class="font-label-lg text-label-lg">My Routes</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-bold rounded-r-full mr-4 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">contact_phone</span>
+<span class="font-label-lg text-label-lg">Safe-Reach Contacts</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">campaign</span>
+<span class="font-label-lg text-label-lg">Bus Announcements</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors duration-200 mt-auto" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help_center</span>
+<span class="font-label-lg text-label-lg">Help Center</span>
+</a>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-1 flex flex-col p-main-margin md:p-8 max-w-4xl mx-auto w-full gap-6">
+<!-- Safe-Reach Action Area -->
+<section class="bg-surface rounded-xl border border-outline-variant p-6 flex flex-col items-center justify-center text-center gap-4 shadow-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Safe-Reach</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Instantly notify your trusted contacts that you have safely arrived at your destination.</p>
+<button class="bg-primary hover:bg-primary-fixed-variant active:bg-primary-fixed-variant text-on-primary h-[80px] w-full max-w-xs rounded-full flex items-center justify-center gap-3 shadow-md transition-transform active:scale-95 duration-200 mt-2">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-headline-md text-headline-md">Notify Safe Arrival</span>
+</button>
+</section>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Emergency Contacts List -->
+<section class="bg-surface rounded-xl border border-outline-variant flex flex-col overflow-hidden">
+<div class="px-5 py-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<h3 class="font-label-lg text-label-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">group</span>
+                        Emergency Contacts
+                    </h3>
+<button class="text-primary font-label-md text-label-md uppercase tracking-wider hover:underline p-2 -mr-2">Manage</button>
+</div>
+<div class="flex flex-col p-2">
+<div class="flex items-center justify-between p-3 border-b border-surface-variant last:border-0 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center font-label-lg text-label-lg">
+                                RS
+                            </div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Rahul Sharma</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Father</p>
+</div>
+</div>
+<button aria-label="Call Rahul Sharma" class="h-[48px] w-[48px] flex items-center justify-center text-outline hover:text-primary rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">call</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-3 border-b border-surface-variant last:border-0 hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 bg-tertiary-container text-on-tertiary-container rounded-full flex items-center justify-center font-label-lg text-label-lg">
+                                PS
+                            </div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Priya Sharma</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Mother</p>
+</div>
+</div>
+<button aria-label="Call Priya Sharma" class="h-[48px] w-[48px] flex items-center justify-center text-outline hover:text-primary rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">call</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bus Announcements List -->
+<section class="bg-surface rounded-xl border border-outline-variant flex flex-col overflow-hidden">
+<div class="px-5 py-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<h3 class="font-label-lg text-label-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">campaign</span>
+                        Bus Announcements
+                    </h3>
+</div>
+<div class="flex flex-col p-4 gap-4">
+<div class="flex gap-4 items-start border-b border-surface-variant pb-4 last:border-0 last:pb-0">
+<div class="bg-error-container text-on-error-container p-2 rounded-lg mt-1 flex-shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-baseline mb-1">
+<h4 class="font-label-lg text-label-lg text-on-surface">Route 4A Delay</h4>
+<span class="font-label-md text-label-md text-on-surface-variant">10 mins ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Expected delay of 15 minutes due to heavy traffic near the main highway junction.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start border-b border-surface-variant pb-4 last:border-0 last:pb-0">
+<div class="bg-primary-container text-on-primary-container p-2 rounded-lg mt-1 flex-shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">info</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-baseline mb-1">
+<h4 class="font-label-lg text-label-lg text-on-surface">Schedule Update</h4>
+<span class="font-label-md text-label-md text-on-surface-variant">Yesterday</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Morning pickup times will be shifted 5 minutes earlier starting next week.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Mobile BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-2 pb-safe bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800">
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 px-3 py-1 font-public-sans text-[12px] font-semibold hover:text-blue-600 dark:hover:text-blue-300 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">directions_bus</span>
+            Route
+        </a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 px-3 py-1 font-public-sans text-[12px] font-semibold hover:text-blue-600 dark:hover:text-blue-300 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">sensors</span>
+            Ping Hub
+        </a>
+<a class="flex flex-col items-center justify-center bg-blue-50 dark:bg-blue-900/40 text-blue-800 dark:text-blue-200 rounded-xl px-3 py-1 font-public-sans text-[12px] font-semibold hover:text-blue-600 dark:hover:text-blue-300 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">notifications</span>
+            Alerts
+        </a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 px-3 py-1 font-public-sans text-[12px] font-semibold hover:text-blue-600 dark:hover:text-blue-300 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">settings</span>
+            Settings
+        </a>
+</nav>
+</body></html>
